@@ -1,0 +1,18 @@
+[project]
+name = "ansible-role-infrastructure"
+description = "Infrastructure role of AlnPir"
+version = "1.0.0"
+authors = [{ name = "Alan PIERRE", email = "alan.pierre@proton.me" }]
+
+dependencies = [
+    "ansible",
+    "ansible-lint",
+    ]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    ]
+
+[tool.setuptools]
+py-modules = []

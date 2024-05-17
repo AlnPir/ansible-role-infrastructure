@@ -1,0 +1,14 @@
+- name: Basic deploy/destroy of a service
+  community.general.terraform:
+    project_path: "{{ role_path }}/files/terraform"
+    state: "{{ terraform_state }}"
+    force_init: true
+    binary_path: /opt/homebrew/bin/tofu
+  register: result
+
+- name: Print terraform result
+  ansible.builtin.debug:
+    msg: "{{ result.stdout }}"
+
+- name: Refresh inventory
+  ansible.builtin.meta: refresh_inventory
